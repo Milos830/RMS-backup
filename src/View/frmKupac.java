@@ -28,6 +28,8 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class frmKupac extends JFrame {
 	private JTextField txtImeIPrezimeKupac;
@@ -48,7 +50,7 @@ public class frmKupac extends JFrame {
 	}
 
 	private void initialize() {
-	setBounds(100,200,381,389);
+	setBounds(100,200,548,523);
 	JSplitPane splitPane = new JSplitPane();
 	splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
 	splitPane.setResizeWeight(0.2);
@@ -156,6 +158,8 @@ public class frmKupac extends JFrame {
 	txtEmailKupac.setColumns(10);
 	
 	btnSacuvaj = new JButton("Sacuvaj");
+	btnSacuvaj.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 17));
+	btnSacuvaj.setIcon(new ImageIcon("E:\\real-estate-managment\\src\\resources\\iconfinder_kjots_6424.png"));
 	GridBagConstraints gbc_btnSacuvaj = new GridBagConstraints();
 	gbc_btnSacuvaj.fill = GridBagConstraints.HORIZONTAL;
 	gbc_btnSacuvaj.gridx = 1;
