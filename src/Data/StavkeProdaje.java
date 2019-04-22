@@ -9,12 +9,9 @@ public class StavkeProdaje {
 		private Nekretnina nekretnina;
 		private double cena_po_kvadratu;
 		private int povrsina;
-		
 		private String ukupno;
 		private String provizija;
 		private String provizijaZaposlenog;
-		
-		
 		
 		public String getProvizijaZaposlenog() {
 			return provizijaZaposlenog;
@@ -46,8 +43,6 @@ public class StavkeProdaje {
 		public void setPovrsina(int povrsina) {
 			this.povrsina = povrsina;
 		}
-		
-		
 		
 		public int getIDstavke_nekretnine() {
 			return IDstavke_nekretnine;
@@ -90,10 +85,8 @@ public class StavkeProdaje {
 			this.provizija=provizija;
 			
 		}
-		
-		
-		
-public StavkeProdaje(Zaposleni zaposleni, Nekretnina nekretnina, double cena_po_kvadratu, int povrsina,
+				
+		public StavkeProdaje(Zaposleni zaposleni, Nekretnina nekretnina, double cena_po_kvadratu, int povrsina,
 				String ukupno, String provizija, String provizijaZaposlenog) {
 			
 			this.zaposleni = zaposleni;
@@ -104,17 +97,9 @@ public StavkeProdaje(Zaposleni zaposleni, Nekretnina nekretnina, double cena_po_
 			this.provizija = provizija;
 			this.provizijaZaposlenog = provizijaZaposlenog;
 		}
-//		public void Ukupno ()
-//		{
-//			Double suma=(double) 0;
-//			return suma = String.valueOf(nekretnina.getPovrsina()) * getCena_po_kvadratu();
-//		}
-		
-		
+
 		@Override
 		public String toString() {
 			return "IDstavke_nekretnine + IDProdaje + nekretnina + cena_po_kvadratu";
 		}
-		
-		
-}
+	}

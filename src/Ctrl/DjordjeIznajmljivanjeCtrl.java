@@ -10,10 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 import Data.Iznajmljivanje;
 import Data.Kupac;
 import Data.Nekretnina;
@@ -31,7 +29,6 @@ public class DjordjeIznajmljivanjeCtrl implements Observer{
 	
 	private String[] zaglavlje3 = {"ID stavke", "Broj iznajmljivanja", "Nekretnina", "Pocetak iznajmljivanja", "Kraj iznajmljivanja", "Meseci", "Cena"};
 	
-
 	private fmrIznajmiMacko view;
 	private Model model;
 	private Nekretnina nekretnina;
@@ -51,11 +48,7 @@ public class DjordjeIznajmljivanjeCtrl implements Observer{
 		model.getAllEmmployers();
 		model.getAllCustomers();
 		model.getAllRealEstate("");
-		
-		
-		
-		
-	}
+		}
 	
 	public class KlikListener implements ListSelectionListener {
 
@@ -88,11 +81,8 @@ public class DjordjeIznajmljivanjeCtrl implements Observer{
 			}
 			view.setZarada(sumaZ);
 			view.setBrMeseci(sumaM);
-			
-			
+			}
 		}
-		
-	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
@@ -185,7 +175,6 @@ public class DjordjeIznajmljivanjeCtrl implements Observer{
 				model.getAllRents();
 				model.getStavkeIznajmljivanja();
 				view.ClearFields();
-				
 			}
 			else if (action.equals("ZavrsiIznajmljivanje"))
 			{
@@ -207,7 +196,6 @@ public class DjordjeIznajmljivanjeCtrl implements Observer{
 				model.getAllRents();
 				model.getStavkeIznajmljivanja();
 				view.ClearFields();
-				
 			}
 		}
 	

@@ -13,14 +13,9 @@ import javax.swing.JTable;
 public class frmIZVESTAJ_AllSales extends JFrame {
 	private JTable tblSveProdateNekretnine;
 
-	
-
 	public frmIZVESTAJ_AllSales(String arg0)  {
 		super(arg0);
-		
-		
 		initialize();
-
 	}
 	
 	private void initialize()

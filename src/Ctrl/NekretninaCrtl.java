@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.Grad;
 import Data.Grejanje;
 import Data.Lokacija;
@@ -30,14 +29,10 @@ public class NekretninaCrtl implements Observer{
 	private Model model;
 	private Nekretnina nekretnina;
 	
-	
-	
 	public NekretninaCrtl(frmNekretnina view, Model model, Nekretnina NEK) {
 		this.view=view;
 		view.setSacuvajListener(new NekretninaListener("Sacuvaj"));
-		
 		this.model=model;
-		
 		model.addObserver(this);
 		view.desniKlikIzmeni(new NekretninaListener("Izmeni"));
 		view.setDodajTipNekretnineListener(new DodavanjeListener("TipNekretnine"));
@@ -53,16 +48,14 @@ public class NekretninaCrtl implements Observer{
 		model.getAllFurniture();
 		model.getAllHeating();
 		model.getAllRealEstate("");
-		
 	}
-
 
 	@Override
 	public void update(Observable o, Object arg) {
 		if(!((ArrayList<Object>)arg).isEmpty())
 		{
 		if(((ArrayList<Object>) arg).get(0) instanceof Nekretnina)
-{
+		{
 	ArrayList<Nekretnina> lista = (ArrayList<Nekretnina>)arg;
 	Object[][] podaci = new Object[lista.size()][zaglavlje.length];
 	int i=0;
@@ -82,9 +75,9 @@ public class NekretninaCrtl implements Observer{
 		podaci[i][11] = red.getGrejanje();
 		podaci[i][12] = red.getStatus();
 		i++;
-	}
+		}
 	view.setTableData(zaglavlje, podaci);
-}
+	}
 		else if (((ArrayList<Object>)arg).get(0) instanceof TipNekretnine)
 		{
 			ArrayList<TipNekretnine> tipovi = (ArrayList<TipNekretnine>) arg;
@@ -101,7 +94,6 @@ public class NekretninaCrtl implements Observer{
 			System.out.println("Osveze cb");
 			view.setGradCB(gradovi);
 		}
-		
 		else if (((ArrayList<Object>)arg).get(0) instanceof Lokacija)
 		{
 			ArrayList<Lokacija> lok = (ArrayList<Lokacija>) arg;
@@ -139,8 +131,7 @@ public class NekretninaCrtl implements Observer{
 						model.SacuvajNekretnina(nekretnina);
 						model.getAllRealEstate("");
 						view.ClearFields();
-			}
-				
+					}
 			else if (izmeniSacuvaj.equals("Izmeni")) {
 				Nekretnina ne = view.getSelectedItemFromTable();
 				view.setSifraNekretnine(ne.getSifraNekretnine());
@@ -156,9 +147,9 @@ public class NekretninaCrtl implements Observer{
 				view.setGrejanje(ne.getGrejanje().getIDgrejanje());
 				view.setSacuvajListener(new NekretninaListener("SIZMENE"));
 				nekretnina = ne;
-			}
+				}
 			else if(izmeniSacuvaj.equals("SIZMENE"))
-			{
+				{
 				nekretnina.setSifraNekretnine(view.getSifraNekretnine());
 				nekretnina.setTipNekretnine((TipNekretnine) view.getTipNekretnine());
 				nekretnina.setTipGradnje((TipGradnje)view.getTipGradnje());
@@ -176,7 +167,6 @@ public class NekretninaCrtl implements Observer{
 				view.setSacuvajListener(new NekretninaListener("Sacuvaj"));
 				model.getAllRealEstate("");
 			}
-			
 		}
 	}
 				
@@ -221,8 +211,6 @@ public class NekretninaCrtl implements Observer{
 					gre.setVisible(true);
 				}
 			}
-					
 		}
-		
 	}
 

@@ -62,12 +62,8 @@ public class fmrIznajmiMacko extends JFrame {
 
 	public fmrIznajmiMacko(String arg0)  {
 		super(arg0);
-		
-		
 		initialize();
-		
 	}
-	
 	
 	private void initialize()
 	{
@@ -316,7 +312,6 @@ public class fmrIznajmiMacko extends JFrame {
 	
 	public double getCena()
 	{
-	
 		return Double.parseDouble(txtCenaIznajmljivanja.getText());
 	}
 	
@@ -330,8 +325,6 @@ public class fmrIznajmiMacko extends JFrame {
 		tblNekretnina.setModel(new DefaultTableModel(podaci,zaglavlje));
 	}
 	
-	
-	
 	public void setKreiranaIznajmljivanja(String[] zaglavlje2, Object[][] podaci2)
 	{
 		tblIznajmljenihNekretnina.setModel(new DefaultTableModel(podaci2, zaglavlje2));
@@ -341,7 +334,6 @@ public class fmrIznajmiMacko extends JFrame {
 	{
 		btnKreirajIznajmljivanje.addActionListener(a);
 	}
-	
 	
 	public void setZavrsiIznajmljivanjeListener(ActionListener a)
 	{
@@ -472,9 +464,6 @@ public class fmrIznajmiMacko extends JFrame {
 		return null;
 	}
 	
-
-	
-	
 	public void EnableStavke()
 	{
 		txtDatumPocetak.setEnabled(true);
@@ -484,8 +473,6 @@ public class fmrIznajmiMacko extends JFrame {
 		btnIznajmi.setEnabled(true);
 	}
 	
-	
-	
 	public void ClearFields ()
 	{
 		txtBrojIznajmljivanja.setText("");
@@ -493,11 +480,7 @@ public class fmrIznajmiMacko extends JFrame {
 		txtDatumKraj.setText("");
 		txtDatumPocetak.setText("");
 		txtRazlikaDatuma.setText("");
-//		cbNekretnina.setSelectedItem("");
-		
-		
 	}
-	
 	
 	/////////////////// TIME STAMP /////////////////////////////
 	
@@ -537,7 +520,7 @@ public class fmrIznajmiMacko extends JFrame {
 		}
 		 System.out.println(datum);
 		 return datum;
-	}
+		}
 	}
 	public Double getDatumRazlika()
 	{
@@ -557,7 +540,6 @@ public class fmrIznajmiMacko extends JFrame {
 		try {
 			txtDatumKraj.setText(new SimpleDateFormat("dd.MM.yyyy").parse(date.toString()).toString());
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

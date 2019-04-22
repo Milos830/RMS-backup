@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.Prodaja;
 import Data.StavkeProdaje;
 import Model.Model;
@@ -40,21 +39,19 @@ public class ProdajaCtrl implements Observer {
 		model.getAllEmmployers();
 		model.getAllCustomers();
 		model.getAllRealEstate("Slobodno");
-		
-	
-	}
+		}
 	@Override
 	public void update(Observable o, Object arg) 	{
 		
 		if(!((ArrayList<Object>)arg).isEmpty()) 
-		{	
+			{	
 			if(((ArrayList<Object>)arg).get(0) instanceof StavkeProdaje)
 			{
 			ArrayList<StavkeProdaje> lista = (ArrayList<StavkeProdaje>)arg;
 		Object[][] podaci = new Object[lista.size()][zaglavlje.length];
 		int i = 0;
 		for (StavkeProdaje red : lista)
-		{	
+			{	
 				podaci[i][0] = red.getIDstavke_nekretnine();
 				podaci[i][1] = red.getProdaja().getIDevidencija_prodaje();
 				podaci[i][2] = red.getNekretnina();
@@ -77,7 +74,6 @@ public class ProdajaCtrl implements Observer {
 		{
 			ArrayList<Nekretnina> nek = (ArrayList<Nekretnina>) arg;
 			view.setNekretninaCB(nek);
-
 		}
 	}
 }
@@ -93,7 +89,6 @@ public class ProdajaCtrl implements Observer {
 			
 			if(action.equals("sacuvaj"))
 			{
-			
 			prodaja = new Prodaja(0, view.getDate(), view.getBrojProdaje(),  (Kupac) view.getKupac(), (Zaposleni) view.getZaposleni());
 			model.SacuvajProdaja(prodaja);
 			view.EnableStavke();
@@ -107,9 +102,7 @@ public class ProdajaCtrl implements Observer {
 				view.ClearFilds();
 			}
 			else if(action.equals("zavrsi")) {
-				
 			}
-		
 	}
 	
 	public String getDate(long timeStamp)
@@ -117,6 +110,6 @@ public class ProdajaCtrl implements Observer {
 		DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
 		Date time = new Date((long) timeStamp*1000);
 		return df.format(time);
+		}
 	}
-}
 }

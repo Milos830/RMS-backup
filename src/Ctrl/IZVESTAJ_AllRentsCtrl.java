@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JFileChooser;
-
 import com.itextpdf.awt.geom.Rectangle;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
@@ -31,10 +29,6 @@ import Model.Model;
 import View.frmIZVESTAJ_AllRents;
 
 
-
-
-
-
 public class IZVESTAJ_AllRentsCtrl implements Observer{
 	private Model model;
 	private frmIZVESTAJ_AllRents view;
@@ -49,10 +43,7 @@ public class IZVESTAJ_AllRentsCtrl implements Observer{
 		model.addObserver(this);
 		model.getRentRealEstateReport();
 		view.setPrintLsn(new IzvestajListener("Print to PDF"));
-		
-
-	
-	}
+		}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
@@ -78,7 +69,6 @@ public class IZVESTAJ_AllRentsCtrl implements Observer{
 		}
 	}
 	
-
 	public String getDate(long timeStamp)
 	{
 		DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
@@ -89,8 +79,6 @@ public class IZVESTAJ_AllRentsCtrl implements Observer{
 	public  Double getRound2(String val) {
 	    return new BigDecimal(val.toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
 	}
-	
-
 	
 	public void pdfAllRents() {
 		JFileChooser c = new JFileChooser();
@@ -185,7 +173,6 @@ public class IZVESTAJ_AllRentsCtrl implements Observer{
 				PdfPCell cell7 = new PdfPCell(new Paragraph(String.valueOf(getRound2(si.getZarada())),tblFont));
 				table.addCell(cell7);
 			}
-			
 			document.add(table); //DODAVANJE 2 TABELE U DOKUMENT
 			document.close(); //ZATVARANJE DOKUMENTA
 		} catch(Exception e) {
@@ -211,8 +198,6 @@ public class IZVESTAJ_AllRentsCtrl implements Observer{
 			if(action.equals("Print to PDF")) {
 				pdfAllRents();
 			}
-}
-		
-			
 		}
+	}
 }

@@ -51,12 +51,4 @@ public class Iznajmljivanje {
 		public String toString() {
 			return Broj_iznajmljivanja;
 		}
-
-
-		
-		
-		
-		
-		
-		
 }

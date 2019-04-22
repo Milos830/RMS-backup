@@ -14,12 +14,10 @@ public class IZABERI_IZVESTAJ_Ctrl implements Observer{
 		this.view=view;
 		this.model=model;
 		model.getRentRealEstateReport();
-		// TODO Auto-generated constructor stub
-	}
+		}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
 		
 	}
 

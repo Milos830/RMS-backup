@@ -28,6 +28,4 @@ public class Grejanje {
 		public String toString() {
 			return Naziv;
 		}
-		
-		
 }

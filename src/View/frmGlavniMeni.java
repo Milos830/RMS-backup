@@ -254,13 +254,21 @@ public class frmGlavniMeni extends JFrame implements Observer{
 				{
 					upit += " and Broj_kupatila =" + txtBrKupatila.getText().toString();
 				}
+//				else if (cbTipNekretnine.getSelectedItem().equals("") || cbTipGradnje.getSelectedItem().equals("") || cbLokacija.getSelectedItem().equals("") || txtPovrsina.getText().equals("") || txtBrSoba.getText().equals("") || 
+//						cbNamestenost.getSelectedItem().equals("") || cbGrejanje.getSelectedItem().equals("")|| txtBrKupatila.getText().equals(""))
+//				{
+//					JOptionPane.showMessageDialog(null, "Nepostoji nekretnina sa biranim kriterijumom", "GRESKA", JOptionPane.ERROR_MESSAGE);
+//				}
 				
 				 upit += " and Status = 'Slobodno'";
 				
 //				
 //				  {
-//				  JOptionPane.showMessageDialog(null, "Nepostoji nekretnina sa biranim kriterijumom", "GRESKA", JOptionPane.ERROR_MESSAGE);
+//				  
 //				  } 
+				 
+//				 else if (chckbxIzaberiTipNekretnine.equals("") || chckbxIzaberiTipGradnje.equals("") || chckbxIzaberiLokaciju.equals("") || txtPovrsina.equals("") ||
+//							t)
 				mod.GetQueryResult(upit);
 				
 				cbTipNekretnine.setEnabled(false);

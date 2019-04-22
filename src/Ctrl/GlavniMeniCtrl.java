@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Model.Model;
 import View.fmrIznajmiMacko;
 import View.frmGlavniMeni;
@@ -34,7 +33,6 @@ public class GlavniMeniCtrl implements Observer{
 	private frmGlavniMeni view;
 	private Model model;
 	
-
 	public GlavniMeniCtrl(frmGlavniMeni view, Model model) {
 		
 		this.view=view;
@@ -53,7 +51,7 @@ public class GlavniMeniCtrl implements Observer{
 		model.getAllTypesOfConstruction();
 		model.getAllHeating();
 		model.getAllCities();
-	}
+		}
 
 	@Override
 	public void update(Observable o, Object arg) {
@@ -90,13 +88,10 @@ public class GlavniMeniCtrl implements Observer{
 		{
 			ArrayList<Grejanje> grej = (ArrayList<Grejanje>) arg;
 			view.setGrejanjeCB(grej);
-	}
+		}
 
 		}
 	}
-
-	
-	
 	
 	public class GlavniMeniListener implements ActionListener {
 		private String KojeDugme;

@@ -9,10 +9,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 import Data.StavkeIznajmljivanja;
 import Data.Zaposleni;
 import Model.Model;
@@ -63,10 +61,8 @@ public class IZVESTAJ_All_rentals_by_agentsCtrl implements Observer{
 			}
 			view.setProvizija(sumaP);
 			view.setZarada(sumaZ);
-			
+			}
 		}
-		
-	}
 	
 	@Override
 	public void update(Observable arg0, Object arg1) {
@@ -83,10 +79,9 @@ public class IZVESTAJ_All_rentals_by_agentsCtrl implements Observer{
 				podaci1[i][2] = red;
 				podaci1[i][3] = red.getTelefonzaposleni();
 				i++;
-			
-	}
+			}
 			view.setTableZaposleni(zaglavlje1, podaci1);
-}
+		}
 		
 	} 
 	
@@ -99,11 +94,6 @@ public class IZVESTAJ_All_rentals_by_agentsCtrl implements Observer{
 	
 	public  Double getRound2(String val) {
 	    return new BigDecimal(val.toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
+			}
 	}
 	
-
-	
-	
-	
-}
-		

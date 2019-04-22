@@ -5,9 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.Kupac;
-
 import Model.Model;
 import View.frmKupac;
 
@@ -25,8 +23,7 @@ public class KupacCrtl implements Observer{
 		view.setIzmeniKupac(new KupacListener("Izmeni"));
 		model.addObserver(this);
 		model.getAllCustomers();
-		
-	}
+		}
 
 	@Override
 	public void update(Observable o, Object arg) {
@@ -44,8 +41,7 @@ public class KupacCrtl implements Observer{
 		i++;
 		}
 		view.setTableData(zaglavlje, podaci);
-		
-		}
+	}
 	
 	public class KupacListener implements ActionListener {
 		private String action;
@@ -89,5 +85,4 @@ public class KupacCrtl implements Observer{
 		}
 		
 	}
-	
 }

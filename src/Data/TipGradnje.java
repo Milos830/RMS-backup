@@ -28,6 +28,4 @@ public class TipGradnje {
 	public String toString() {
 		return Naziv;
 	}
-	
-	 
 }

@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observer;
-
 import Data.Grejanje;
 import Model.Model;
 import View.frmGrejanje;
@@ -22,8 +21,6 @@ public class GrejanjeCtrl implements Observer{
 		model.getAllHeating();
 		view.SacuvajLsn(new GrejanjeListener());
 	}
-
-	
 
 	@Override
 	public void update(java.util.Observable o, Object arg) {
@@ -52,7 +49,4 @@ public class GrejanjeCtrl implements Observer{
 		}
 		
 	}
-
-	
-
 }

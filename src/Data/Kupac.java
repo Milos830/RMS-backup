@@ -11,8 +11,6 @@ public class Kupac {
 		private String Emailkupac;
 		private Nekretnina rezervisanaNek;
 		
-		
-		
 		public Nekretnina getRezervisanaNek() {
 			return rezervisanaNek;
 		}
@@ -69,13 +67,4 @@ public class Kupac {
 		public String toString() {
 			return imeiprezimekupac;
 		}
-		public static void setNekretnina(Nekretnina rezervisanaNek2) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		
-		
-		
-		
 }

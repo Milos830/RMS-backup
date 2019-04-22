@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.TipGradnje;
 import Model.Model;
 import View.frmTipGradnje;
@@ -21,8 +20,7 @@ public class TipGradnjeCtrl implements Observer{
 		model.addObserver(this);
 		this.model.getAllTypesOfConstruction();
 		view.SacuvajLsn(new TipGrListener());
-	
-	}
+		}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
@@ -48,7 +46,5 @@ public class TipGradnjeCtrl implements Observer{
 			model.getAllTypesOfConstruction();
 			view.ClearFields();
 		}
-		
 	}
-
 }

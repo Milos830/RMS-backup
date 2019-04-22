@@ -28,6 +28,4 @@ public class Namestenost {
 	public String toString() {
 		return Naziv;
 	}
-	
-	
 }

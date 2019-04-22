@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.ImageIcon;
 
 public class frmIZVESTAJ_AllRents extends JFrame{
 	private JTable tblSvaIznajmljivanja;
@@ -21,25 +22,27 @@ public class frmIZVESTAJ_AllRents extends JFrame{
 
 	public frmIZVESTAJ_AllRents(String arg) {
 		super(arg);
+		setTitle("Report off all rented property");
 		
 		initialize();
-
 	}
 	
 	private void initialize()
 	{
-		setBounds(100,200,825,678);
+		setBounds(100,200,846,780);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		JScrollPane scrollPane = new JScrollPane();
 		
-		btnPrintReportTo = new JButton("Print report to PDF");
+		btnPrintReportTo = new JButton("PDF");
+		btnPrintReportTo.setIcon(new ImageIcon("E:\\real-estate-managment\\src\\resources\\iconfinder_filequickprint_6045.png"));
+		btnPrintReportTo.setSelectedIcon(new ImageIcon("E:\\real-estate-managment\\src\\resources\\iconfinder_filequickprint_6045.png"));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnPrintReportTo, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnPrintReportTo, GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE))
 					.addContainerGap())
 		);
@@ -49,8 +52,8 @@ public class frmIZVESTAJ_AllRents extends JFrame{
 					.addContainerGap()
 					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 592, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnPrintReportTo)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addComponent(btnPrintReportTo, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(21, Short.MAX_VALUE))
 		);
 		
 		tblSvaIznajmljivanja = new JTable();

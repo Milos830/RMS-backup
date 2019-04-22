@@ -28,7 +28,4 @@ public class TipNekretnine {
 	public String toString() {
 		return Naziv;
 	}
-	
-	
-	
 }

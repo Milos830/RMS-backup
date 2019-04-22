@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.Lokacija;
 import Model.Model;
 import View.frmLokacija;
@@ -22,7 +21,6 @@ public class LokacijaCtrl implements Observer{
 			model.addObserver(this);
 			model.getAllLocation();
 			view.SacuvajLsn(new LokacijaListener());
-
 	}
 
 	@Override
@@ -35,8 +33,7 @@ public class LokacijaCtrl implements Observer{
 			podaci[i][0] = lok.getIDlokacija();
 			podaci[i][1] = lok.getNaziv();
 			i++;
-			
-		}
+			}
 		view.setTableData(zaglavlje, podaci);
 	}
 
@@ -50,7 +47,5 @@ public class LokacijaCtrl implements Observer{
 			 model.getAllLocation();
 			 view.ClearFields();
 		}
-		 
 	}
-	
 }

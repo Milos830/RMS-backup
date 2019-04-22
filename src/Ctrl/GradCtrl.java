@@ -21,7 +21,6 @@ public class GradCtrl implements Observer{
 		model.addObserver(this);
 		this.model.getAllCities();
 		view.setSacuvajListener(new GradListener());
-	
 	}
 
 	@Override
@@ -35,8 +34,7 @@ public class GradCtrl implements Observer{
 			i++;
 		}
 		view.setTableData(zaglavlje, podaci);
-		
-	}
+		}
 
 	public class GradListener implements ActionListener {
 

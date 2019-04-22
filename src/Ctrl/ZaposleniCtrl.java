@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.Zaposleni;
 import Model.Model;
 import View.frmZaposleni;
@@ -38,7 +37,6 @@ public class ZaposleniCtrl implements Observer {
 			i++;
 		}
 		view.setTableData(zaglavlje, podaci);
-			
 	}
 	
 	public class ZaposleniListener implements ActionListener {
@@ -51,7 +49,5 @@ public class ZaposleniCtrl implements Observer {
 			model.getAllEmmployers();
 			view.ClearFields();
 		}
-		
 	}
-
 }

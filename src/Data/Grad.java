@@ -6,7 +6,6 @@ public class Grad {
 	private int IDgrad;
 	private String Naziv;
 	
-	
 	public int getIDgrad() {
 		return IDgrad;
 	}
@@ -24,10 +23,9 @@ public class Grad {
 		IDgrad = iDgrad;
 		Naziv = naziv;
 	}
+	
 	@Override
 	public String toString() {
 		return Naziv;
 	}
-	
-	
 }

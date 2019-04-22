@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ImageIcon;
 
 public class frmGrad extends JFrame {
 	private JTextField txtNazivGrada;
@@ -26,7 +27,7 @@ public class frmGrad extends JFrame {
 
 	private void initialize()
 	{
-		setBounds(100,200,325,282);
+		setBounds(100,200,324,469);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
@@ -40,7 +41,8 @@ public class frmGrad extends JFrame {
 		txtNazivGrada.setColumns(10);
 		
 		btnDodaj = new JButton("Dodaj");
-		btnDodaj.setBounds(208, 7, 89, 23);
+		btnDodaj.setIcon(new ImageIcon("E:\\real-estate-managment\\src\\resources\\iconfinder_kjots_6424.png"));
+		btnDodaj.setBounds(10, 262, 287, 157);
 		getContentPane().add(btnDodaj);
 		
 		JScrollPane scrollPane = new JScrollPane();

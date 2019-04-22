@@ -3,7 +3,6 @@ package Ctrl;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.StavkeProdaje;
 import Model.Model;
 import View.frmIZVESTAJ_AllSales;
@@ -29,7 +28,6 @@ public class IZVESTAJ_AllSalesCtrl implements Observer{
 			int i=0;
 			for(StavkeProdaje red : lista)
 			{
-				
 				podaci[i][0] = red.getNekretnina();
 				podaci[i][1] = red.getNekretnina().getPovrsina();
 				podaci[i][2] = red.getCena_po_kvadratu();
@@ -38,7 +36,7 @@ public class IZVESTAJ_AllSalesCtrl implements Observer{
 				i++;
 			}
 			view.setTableDataSveProdateNekretnine(zaglavlje, podaci);
-	}
+		}
 
-}
+	}
 }

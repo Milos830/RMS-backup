@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 import Data.Grad;
 import Data.Grejanje;
@@ -25,9 +26,9 @@ import Data.TipNekretnine;
 import Data.Zaposleni;
 import javafx.scene.control.ComboBox;
 
-public class Model extends Observable{
-
-public void getAllCities () {
+	public class Model extends Observable{
+	
+	public void getAllCities () {
 		
 		MySqlConnection con = new MySqlConnection();
 		Connection konekcija = con.getConnection();
@@ -66,9 +67,6 @@ public void getAllCities () {
 			getAllCities();
 		}
 	}
-	
-	
-	
 	public void SacuvajTipNekretnine(TipNekretnine tipn)
 	{
 		MySqlConnection conn = new MySqlConnection();
@@ -264,9 +262,7 @@ public void getAllCities () {
 				}
 				setChanged();
 				notifyObservers(nam);
-				
-			}
-
+				}
 			
 			public void SacuvajNamestenost (Namestenost namestenost) {
 				MySqlConnection conn = new MySqlConnection();
@@ -369,8 +365,6 @@ public void getAllCities () {
 				}
 				return grad;
 			}
-			
-			
 			
 			public Lokacija getLokacija(int ID) {
 				MySqlConnection con = new MySqlConnection();
@@ -514,8 +508,7 @@ public void getAllCities () {
 						}
 					}
 					return nekretnina;
-				
-			}
+				}
 			
 			public void SacuvajNekretnina(Nekretnina nekretnina)
 			{
@@ -552,23 +545,30 @@ public void getAllCities () {
 				try {
 					Statement q = konekcija.createStatement();
 					ResultSet rs = q.executeQuery(upit);
-					
+//					
+					boolean found = false;
 					while (rs.next())
 					{
+						found = true;
 						Nekretnina ne = new Nekretnina(rs.getInt(1), rs.getString(2), getTip(rs.getInt(3)), 
 								getTipGradnje(rs.getInt(4)), getGrad(rs.getInt(5)), rs.getString(6), 
 								getLokacija(rs.getInt(7)), rs.getInt(8), rs.getInt(9), rs.getInt(10), 
 								getNamestenost(rs.getInt(11)), getGrejanje(rs.getInt(12)), rs.getString(13));
 						tipGr.add(ne);
 					}
+					if(!found) {
+						JOptionPane.showMessageDialog(null, "Nepostoji nekretnina sa biranim kriterijumom", "GRESKA", JOptionPane.ERROR_MESSAGE);
+					}
 					
 				}catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
+				
 				setChanged();
 				notifyObservers(tipGr);
 			}
+			
 			
 			public void getAllTypesOfConstruction () {
 				MySqlConnection con = new MySqlConnection();
@@ -625,9 +625,7 @@ public void getAllCities () {
 				notifyObservers(tipNekretnine);
 			}
 
-			
-				
-				public void getAllEmmployers () {
+			public void getAllEmmployers () {
 					MySqlConnection con = new MySqlConnection();
 					Connection konekcija = con.getConnection();
 					ArrayList<Zaposleni> zap = new ArrayList<Zaposleni>();
@@ -647,7 +645,7 @@ public void getAllCities () {
 					notifyObservers(zap);
 				}
 				
-				public Zaposleni getZaposleni(int ID)
+			public Zaposleni getZaposleni(int ID)
 				{
 					MySqlConnection conn = new MySqlConnection();
 					Connection konekcija = conn.getConnection();
@@ -717,7 +715,7 @@ public void getAllCities () {
 						notifyObservers(prod);
 					}
 				}
-					public void getStavkeProdaje()
+			public void getStavkeProdaje()
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -738,7 +736,7 @@ public void getAllCities () {
 						notifyObservers(stavke);
 				}
 					
-					public Prodaja getProdaja(int ID)
+			public Prodaja getProdaja(int ID)
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -767,7 +765,7 @@ public void getAllCities () {
 						return prodaja;
 					}
 					
-					public void IzmeniProdaja (Prodaja pr)
+			public void IzmeniProdaja (Prodaja pr)
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -789,7 +787,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void SacuvajProdaja(Prodaja pr)
+			public void SacuvajProdaja(Prodaja pr)
 					{
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
@@ -813,7 +811,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void SacuvajStavke(StavkeProdaje sp)
+			public void SacuvajStavke(StavkeProdaje sp)
 					{
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
@@ -830,7 +828,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void SacuvajIznajmljivanje(Iznajmljivanje iznm)
+			public void SacuvajIznajmljivanje(Iznajmljivanje iznm)
 					{
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
@@ -854,7 +852,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void getAllRents()
+			public void getAllRents()
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -878,7 +876,7 @@ public void getAllCities () {
 							}
 						}
 					
-					public Iznajmljivanje getIznajmljivanje(int ID)
+			public Iznajmljivanje getIznajmljivanje(int ID)
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -907,7 +905,7 @@ public void getAllCities () {
 						return iznajmljivanje;
 					}
 				
-					public void getStavkeIznajmljivanja()
+			public void getStavkeIznajmljivanja()
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -928,8 +926,7 @@ public void getAllCities () {
 						notifyObservers(stavkeIz);
 					}
 					
-					
-					public void SacuvajStavkeIz(StavkeIznajmljivanja sIZ)
+			public void SacuvajStavkeIz(StavkeIznajmljivanja sIZ)
 					{
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
@@ -948,7 +945,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void IzmeniStavkeIznajmljivanja(StavkeIznajmljivanja stavke) { // ZAVRSAVANJE IZNAJMLJIVANJA I VRACANJE STATUSA NEKRETNINE U SLOBODNU
+			public void IzmeniStavkeIznajmljivanja(StavkeIznajmljivanja stavke) { // ZAVRSAVANJE IZNAJMLJIVANJA I VRACANJE STATUSA NEKRETNINE U SLOBODNU
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
 						try {
@@ -970,7 +967,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public ArrayList<StavkeIznajmljivanja> getAllStavkeIznajmljivanjaForID (int ID)
+			public ArrayList<StavkeIznajmljivanja> getAllStavkeIznajmljivanjaForID (int ID)
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -1003,7 +1000,7 @@ public void getAllCities () {
 					
 				//////////////// IZMENI //////////////////////////	
 					
-					public void IzmeniSTATUSnekretninePRODAJA(Nekretnina N) {
+			public void IzmeniSTATUSnekretninePRODAJA(Nekretnina N) {
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
 						try {
@@ -1020,7 +1017,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void IzmeniSTATUSnekretnineIZNAJMLJIVANJE(Nekretnina NN) {
+			public void IzmeniSTATUSnekretnineIZNAJMLJIVANJE(Nekretnina NN) {
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
 						try {
@@ -1037,7 +1034,7 @@ public void getAllCities () {
 						}
 					}
 					
-					public void IzmeniNekretnina(Nekretnina NEK) {
+			public void IzmeniNekretnina(Nekretnina NEK) {
 						MySqlConnection conn = new MySqlConnection();
 						Connection konekcija = conn.getConnection();
 						try {
@@ -1070,7 +1067,7 @@ public void getAllCities () {
 					
 					///////////////////////////////////////////IZVESTAJI/////////////////
 					
-					public void getSoldRealEstateReport()
+			public void getSoldRealEstateReport()
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -1092,7 +1089,7 @@ public void getAllCities () {
 						notifyObservers(stavke);
 					}
 					
-					public void getRentRealEstateReport()
+			public void getRentRealEstateReport()
 					{
 						MySqlConnection con = new MySqlConnection();
 						Connection konekcija = con.getConnection();
@@ -1117,7 +1114,7 @@ public void getAllCities () {
 						notifyObservers(stavke);
 					}
 
-				public void getSellthepropertybyagents () 
+			public void getSellthepropertybyagents () 
 				{
 					MySqlConnection con = new MySqlConnection();
 					Connection konekcija = con.getConnection();
@@ -1164,8 +1161,6 @@ public void getAllCities () {
 			
 			public   ArrayList<StavkeProdaje> getSalesByAgents (int ID )
 			{
-				
-				
 				MySqlConnection conn = new MySqlConnection();
 				Connection konekcija = conn.getConnection();
 				ArrayList<StavkeProdaje> sp = new ArrayList<StavkeProdaje>();
@@ -1182,7 +1177,6 @@ public void getAllCities () {
 					}
 								
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				
 			}

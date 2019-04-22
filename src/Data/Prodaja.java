@@ -67,8 +67,4 @@ public class Prodaja {
 		public String toString() {
 			return "IDevidencija_prodaje + Broj_prodaje + Datum_prodaje + kupac + zaposleni";
 		}
-		
-			
-		
-		
 }

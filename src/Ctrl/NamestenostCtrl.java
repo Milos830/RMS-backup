@@ -34,7 +34,6 @@ public class NamestenostCtrl implements Observer {
 			podaci[i][0] = namestenost.getIDnamestenost();
 			podaci[i][1] = namestenost.getNaziv();
 			i++;
-			
 		}
 		view.setTableData(zaglavlje, podaci);
 	}
@@ -49,6 +48,5 @@ public class NamestenostCtrl implements Observer {
 			model.getAllFurniture();
 			view.ClearFields();
 		}
-		
 	}
 }

@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import Data.TipNekretnine;
 import Model.Model;
 import View.frmTipNekretnine;
@@ -20,7 +19,6 @@ public class TipNekretnineCtrl  implements Observer
 		
 		this.view=view;
 		this.model=model;
-		
 		model.addObserver(this);
 		model.getTipNekretnine();
 		view.setSacuvajListener(new TipNListener());
@@ -36,10 +34,8 @@ public class TipNekretnineCtrl  implements Observer
 			podaci[i][0] = tipN.getIDtip_nekretnine();
 			podaci[i][1] = tipN.getNaziv();
 			i++;
-			
 		}
 		view.setTableData(zaglavlje, podaci);
-		
 	}
 	public class TipNListener implements ActionListener {
 
@@ -49,11 +45,6 @@ public class TipNekretnineCtrl  implements Observer
 			model.SacuvajTipNekretnine(tipn);
 			model.getTipNekretnine();
 			view.ClearFields();
-			
 		}
-		
 	}
-	
-	
-
 }

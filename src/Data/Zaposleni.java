@@ -44,7 +44,4 @@ public class Zaposleni {
 		public String toString() {
 			return ImeIPrezimezaposleni;
 		}
-		
-		
-		
 }

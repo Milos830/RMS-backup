@@ -38,13 +38,9 @@ public class frmIZVESTAJ_All_rentals_by_agents extends JFrame {
 	private JTextField txtZarada;
 	private JTextField txtProvizija;
 
-	
-
 	public frmIZVESTAJ_All_rentals_by_agents(String title)  {
 		super(title);
-		
 		initialize();
-	
 	}
 	
 	private void initialize()
@@ -133,8 +129,4 @@ public class frmIZVESTAJ_All_rentals_by_agents extends JFrame {
 		txtProvizija.setText(Double.toString(sum1));
 	}
 	
-	
 }
-
-	
-	

@@ -171,7 +171,7 @@ public class Nekretnina {
 
 	@Override
 	public String toString() {
-		return SifraNekretnine;
-//		return SifraNekretnine + "- " + tipNekretnine + "-  " + Adresa;
+		return SifraNekretnine + Adresa;
+
 	}
 }

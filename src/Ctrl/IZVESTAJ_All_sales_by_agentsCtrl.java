@@ -7,14 +7,11 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 import Data.StavkeProdaje;
 import Data.Zaposleni;
 import Model.Model;
-
 import View.frmIZVESTAJ_All_sales_by_agents;
 
 public class IZVESTAJ_All_sales_by_agentsCtrl implements Observer{
@@ -28,8 +25,7 @@ public class IZVESTAJ_All_sales_by_agentsCtrl implements Observer{
 		model.addObserver(this);
 		model.getAllEmmployers();
 		view.SetCBListener(new KlikLsn());
-		
-	}
+		}
 	
 	public class KlikLsn implements ActionListener {
 			

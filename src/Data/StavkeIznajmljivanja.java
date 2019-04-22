@@ -51,46 +51,40 @@ public class StavkeIznajmljivanja {
 		return DatumRazlika;
 	}
 	
-	
-	
-	
-public StavkeIznajmljivanja(Zaposleni zaposleni, Nekretnina nekretnina, long datum_pocetak, long datum_kraj, 
+	public StavkeIznajmljivanja(Zaposleni zaposleni, Nekretnina nekretnina, long datum_pocetak, long datum_kraj, 
 			 String ukupanBrojDanaIznajmljivanja, double cena, String zarada, String provizija) {
-		this.zaposleni = zaposleni;
-		this.nekretnina = nekretnina;
-		this.Datum_pocetak = datum_pocetak;
-		this.Datum_kraj = datum_kraj;
-		this.Cena = cena;
-		
-		this.UkupanBrojDanaIznajmljivanja = ukupanBrojDanaIznajmljivanja;
-		this.Zarada = zarada;
-		this.Provizija = provizija;
+			this.zaposleni = zaposleni;
+			this.nekretnina = nekretnina;
+			this.Datum_pocetak = datum_pocetak;
+			this.Datum_kraj = datum_kraj;
+			this.Cena = cena;
+			this.UkupanBrojDanaIznajmljivanja = ukupanBrojDanaIznajmljivanja;
+			this.Zarada = zarada;
+			this.Provizija = provizija;
 	}
 
-
-
-public StavkeIznajmljivanja(Nekretnina nekretnina, long datum_pocetak, long datum_kraj, double cena,
+	public StavkeIznajmljivanja(Nekretnina nekretnina, long datum_pocetak, long datum_kraj, double cena,
 		Zaposleni zaposleni, String zarada, String provizija) {
 	
-	this.nekretnina = nekretnina;
-	Datum_pocetak = datum_pocetak;
-	Datum_kraj = datum_kraj;
-	Cena = cena;
-	this.zaposleni = zaposleni;
-	Zarada = zarada;
-	Provizija = provizija;
+			this.nekretnina = nekretnina;
+			Datum_pocetak = datum_pocetak;
+			Datum_kraj = datum_kraj;
+			Cena = cena;
+			this.zaposleni = zaposleni;
+			Zarada = zarada;
+			Provizija = provizija;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 	public StavkeIznajmljivanja(int iDstavkeIznajmljivanja, Iznajmljivanje iznajmljivanje, Nekretnina nekretnina,
 			long datum_pocetak, long datum_kraj, double cena) {
 		
-		IDstavkeIznajmljivanja = iDstavkeIznajmljivanja;
-		this.iznajmljivanje = iznajmljivanje;
-		this.nekretnina = nekretnina;
-		Datum_pocetak = datum_pocetak;
-		Datum_kraj = datum_kraj;
-		Cena = cena;
+			IDstavkeIznajmljivanja = iDstavkeIznajmljivanja;
+			this.iznajmljivanje = iznajmljivanje;
+			this.nekretnina = nekretnina;
+			Datum_pocetak = datum_pocetak;
+			Datum_kraj = datum_kraj;
+			Cena = cena;
 	}
 	public StavkeIznajmljivanja(long datum_pocetak) {
 		this.Datum_pocetak = datum_pocetak;
@@ -164,8 +158,3 @@ public StavkeIznajmljivanja(Nekretnina nekretnina, long datum_pocetak, long datu
 	}
 
 }
-
-
-
-
-

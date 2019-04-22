@@ -27,6 +27,4 @@ public class Lokacija {
 		public String toString() {
 			return Naziv;
 		}
-		
-		
 }
