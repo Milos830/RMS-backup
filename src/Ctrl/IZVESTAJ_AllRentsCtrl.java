@@ -18,6 +18,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.ElementListener;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -95,6 +96,12 @@ public class IZVESTAJ_AllRentsCtrl implements Observer{
 			
 			Paragraph par = new Paragraph("REPORT OF RENTED PROPERTIES ");
 			document.add(par);
+			
+			document.add(Image.getInstance("E:\\real-estate-managment\\src\\resources\\logo.png"));
+			document.add(new Paragraph("  "));
+			document.add(new Paragraph("  "));
+			document.add(new Paragraph("  "));
+			document.add(new Paragraph("  "));
 			
 			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); //DATUM TRENUTNI KAD STVARAMO PDF
 			Date date = new Date();
